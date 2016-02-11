@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+ 
+# Check out the newest version of the code
+export GIT_WORK_TREE="$HOME/Documents/Projects/my_project"
+git checkout -f
+ 
+# Build the image
+docker build -t my_project:`git log --pretty=format:'%h' -n 1` $HOME/Documents/Projects/my_project
